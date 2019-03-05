@@ -42,6 +42,9 @@ int main(){
   Cat* cuteCats[amountOfCats] = {KarolinasCat, KubasCat};
 
   makeACallAll(cuteCats, amountOfCats);
+
+  delete KarolinasCat;
+  delete KubasCat;
 }
 
 void makeACallAll(Cat* catList[], int amountOfCats){
