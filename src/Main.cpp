@@ -36,16 +36,23 @@ void makeACallAll(Cat* catList[], int amountOfCats);
 
 int main(){
   Cat* KarolinasCat = new Cat(2,"Mraur");
+  Cat* noonesCat = new Cat(0,"Schrodinger");
   Cat* KubasCat = new Tiger(5,"Boss",10);
 
   const int amountOfCats = 2;
   Cat* cuteCats[amountOfCats] = {KarolinasCat, KubasCat};
 
   makeACallAll(cuteCats, amountOfCats);
+
+  for(int i=5;i>4;i++){
+    cout<<"I love dogs."<<endl;
+  }
+
+
 }
 
 void makeACallAll(Cat* catList[], int amountOfCats){
-  for(int i=0;i<amountOfCats;i++){
+  for(int i=0;i<amountOfCats+1;i++){
     catList[i]->makeACall();
   }
 }
