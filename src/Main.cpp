@@ -1,14 +1,12 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 class Cat{
-private:
   int age;
   string name;
 public:
-  Cat(int initAge){
-    age = initAge;
-  };
   Cat(int initAge, string initName){
     age = initAge;
     name = initName;
@@ -21,19 +19,33 @@ public:
 class Tiger: public Cat{
   int numberOfStripes;
 public:
-  Tiger(int initAge, string intiName, int initNumberOfStripes){
-    age = initAge;
-    name = initName;
+  Tiger(int initAge, string initName, int initNumberOfStripes)
+  :Cat(initAge, initName){
     numberOfStripes = initNumberOfStripes;
-  }
+  };
   void makeACall(){
     cout<<"Rawr!"<<endl;
   }
   void tellHowManyStripes(){
-    cout<<"I've got "<<numberOfStripes<<" stripes."<endl;
+    cout<<"I've got "<<numberOfStripes<<" stripes."<<endl;
   }
-}
+};
+
+void makeACallAll(Cat* catList[], int amountOfCats);
+
 
 int main(){
+  Cat* KarolinasCat = new Cat(2,"Mraur");
+  Cat* KubasCat = new Tiger(5,"Boss",10);
 
+  const int amountOfCats = 2;
+  Cat* cuteCats[amountOfCats] = {KarolinasCat, KubasCat};
+
+  makeACallAll(cuteCats, amountOfCats);
+}
+
+void makeACallAll(Cat* catList[], int amountOfCats){
+  for(int i=0;i<amountOfCats;i++){
+    catList[i]->makeACall();
+  }
 }
