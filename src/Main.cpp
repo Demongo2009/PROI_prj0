@@ -9,7 +9,7 @@ public:
   Cat(int initAge){
     age = initAge;
   };
-  Cat(int initAge, stirng initName){
+  Cat(int initAge, string initName){
     age = initAge;
     name = initName;
   };
@@ -18,9 +18,21 @@ public:
   }
 };
 
-// class Tiger: public Cat{
-//
-// }
+class Tiger: public Cat{
+  int numberOfStripes;
+public:
+  Tiger(int initAge, string intiName, int initNumberOfStripes){
+    age = initAge;
+    name = initName;
+    numberOfStripes = initNumberOfStripes;
+  }
+  void makeACall(){
+    cout<<"Rawr!"<<endl;
+  }
+  void tellHowManyStripes(){
+    cout<<"I've got "<<numberOfStripes<<" stripes."<endl;
+  }
+}
 
 int main(){
 
