@@ -11,3 +11,7 @@ $TARGET: Main.o
 
 Main.o:
 	$(CC) $(CFLAGS) -c src/Main.cpp -o build/Main.o
+
+.PHONY:clean
+clean:
+	-rm build/*.o 
